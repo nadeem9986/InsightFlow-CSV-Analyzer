@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CSV Analyzer | Premium Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="liquid-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="glass-container">
+        <header>
+            <div class="logo">
+                <span class="icon">📊</span>
+                <h1>InsightFlow</h1>
+            </div>
+            <p class="subtitle">AI-Powered CSV Inteligence</p>
+        </header>
+
+        <section id="upload-section" class="card">
+            <div class="drop-zone" id="drop-zone">
+                <div class="drop-zone-content">
+                    <span class="upload-icon">📂</span>
+                    <h3>Upload Data</h3>
+                    <p>Drag & drop your CSV file here or <span>browse</span></p>
+                </div>
+                <input type="file" id="file-input" accept=".csv" hidden>
+            </div>
+            <div id="file-info" class="file-info hidden">
+                <div class="file-details">
+                    <span class="file-name" id="selected-filename">filename.csv</span>
+                    <span class="file-stats" id="selected-stats">120 rows • 15 columns</span>
+                </div>
+                <button id="remove-file" class="btn-text">Remove</button>
+            </div>
+        </section>
+
+        <section id="chat-section" class="card disabled">
+            <div class="chat-header">
+                <h3>Conversation</h3>
+                <span class="badge" id="status-badge">Awaiting Data</span>
+            </div>
+            <div id="chat-display" class="chat-display">
+                <div class="message ai-message">
+                    Hello! I'm your AI data assistant. Upload a CSV file above, and I'll help you analyze it.
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="user-input" placeholder="Ask about your data..." disabled>
+                <button id="send-btn" disabled>
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section id="preview-section" class="card hidden">
+            <div class="section-header">
+                <h3>Data Preview</h3>
+                <button id="toggle-preview" class="btn-text">Show/Hide</button>
+            </div>
+            <div id="table-container" class="table-container">
+                <!-- Table will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

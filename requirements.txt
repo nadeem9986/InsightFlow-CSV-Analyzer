@@ -1,0 +1,24 @@
+# CSV Assignment - Required Dependencies
+
+# Core LangChain
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-experimental
+
+# Environment & Utilities
+python-dotenv
+
+# Data Processing
+pandas
+tabulate
+
+# Web Server
+flask
+flask-cors
+
+# Web UI (Streamlit replaced by Flask for pure HTML/CSS/JS)
+
+# Validation
+pydantic
