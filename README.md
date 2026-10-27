@@ -1,74 +1,59 @@
-# CSV Assignment - AI-Powered CSV Analyzer
+# InsightFlow - AI-Powered CSV Analyzer
 
-## 📋 Overview
-This is a standalone LangChain project that allows you to upload CSV files and query them using natural language with AI.
+Upload a CSV and query it in plain English. A Flask backend runs the analysis through LangChain and GPT-4o-mini, and a liquid-glass style web UI presents the results.
 
-## ✅ Setup Complete
-- ✅ Virtual environment created (`.venv`)
-- ✅ Dependencies installed
-- ✅ Environment variables configured (`.env`)
+## Demo
 
-## 🚀 Quick Start
+_Add a screenshot of the web UI answering a question about a CSV here._
 
-### 1. Activate Virtual Environment
-```bash
-# Windows PowerShell
-.venv\Scripts\activate.ps1
+## What it does
 
-# Windows CMD
-.venv\Scripts\activate.bat
-```
+- Upload any CSV file through the web UI
+- Ask questions in natural language ("which month had the highest sales?")
+- LangChain + GPT-4o-mini interprets the question and analyzes the data with Pandas
+- Results rendered in an Apple-style liquid glass interface
 
-### 2. Run Your Application
+## Tech stack
 
-#### Option A: Premium Web UI (Flask Backend + HTML/CSS/JS)
-This provides a stunning Apple-style interface with liquid glass effects.
-```bash
-python server.py
-```
-Then open: **http://localhost:5000**
+- **Backend:** Python, Flask, LangChain, langchain-openai, Pandas
+- **AI:** OpenAI GPT-4o-mini
+- **Frontend:** HTML5, CSS3 (liquid glass design), vanilla JavaScript
+- **Also included:** a Jupyter notebook (`csv_analyzer.ipynb`) showing the step-by-step logic
 
-#### Option B: Jupyter Notebook (Tutorial)
-Open `csv_analyzer.ipynb` in VS Code or Jupyter to see the step-by-step logic.
+## Setup
 
-## 📦 Architecture
-- **Frontend**: Pure HTML5, CSS3 (Liquid Glass Design), Vanilla JavaScript.
-- **Backend**: Python Flask (handling AI analysis and file processing).
-- **AI**: LangChain + GPT-4o-mini.
+1. Clone the repository.
+2. Create and activate a virtual environment:
 
-## 📦 Installed Dependencies
-- **LangChain** - AI application framework
-- **LangChain OpenAI** - OpenAI integration
-- **Streamlit** - Web UI framework
-- **Pandas** - Data processing
-- **Python-dotenv** - Environment management
-- **Pydantic** - Data validation
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate    # Windows
+   # source .venv/bin/activate   # macOS/Linux
+   ```
 
-## 🔑 Configuration
-Your OpenAI API key is already configured in `.env`:
-```
-OPENAI_API_KEY=sk-proj-...
-MODEL_NAME=gpt-4o-mini
-```
+3. Install dependencies:
 
-## 📝 Next Steps
-Ready to build your CSV analyzer! The environment is set up and waiting for your code.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 🛠️ Project Structure
-```
-csvassignment/
-├── .venv/              # Virtual environment (isolated)
-├── .env                # API keys (configured ✅)
-├── .gitignore          # Git ignore rules
-├── requirements.txt    # Dependencies list
-└── README.md           # This file
-```
+4. Create a `.env` file with your own keys:
 
-## 💡 Example Use Cases
-- "What's the average sales by region?"
-- "Show me top 10 customers"
-- "How many orders were placed in January?"
-- "What's the total revenue?"
+   ```
+   OPENAI_API_KEY=your_key_here
+   MODEL_NAME=gpt-4o-mini
+   ```
 
----
-**Status:** ✅ Ready to code!
+   (`.env` is local only - never commit it.)
+
+5. Run the app:
+
+   ```bash
+   python server.py
+   ```
+
+6. Open `http://localhost:5000`.
+
+## What this demonstrates
+
+LLM integration in a real application: LangChain orchestration, prompt-driven data analysis over user-uploaded files, and a full backend-plus-frontend delivery.
